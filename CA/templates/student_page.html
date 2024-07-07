@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block main_content %}
+<h1>Student Dashboard</h1>
+<section id="dashboard">
+    <section id="left">
+        <h2>Modules</h2>
+        <table id="modules">
+            {% for module in modules %}
+            <tr>
+                <th>{{module["modules"]}}</th>
+                <td><a href="{{url_for('grades', module=module['modules'])}}">Grades</a></td>
+                <td><a href="{{url_for('assignment', module=module['modules'])}}">Assignments</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+    <section id="right">
+        <h2>Assignments Due</h2>
+        {% if due %}
+            <table id="due">
+                <tr>
+                    <th>Module</th>
+                    <th>Name</th>
+                    <th width="100px">Due Date</th>
+                    <th>Status</th>
+                </tr>
+                {% for assignment in due %}
+                <tr>
+                    <td>{{assignment["module_id"]}}</td>
+                    <td>{{assignment["name"]}}</td>
+                    <td width="100px">{{assignment["due_date"]}}</td>
+                    {% if g.date >= assignment['due_date'] %}
+                        <td id="overdue">Overdue</td>
+                    {% else %}
+                        <td>Upcoming</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No Assignments Due</p>
+        {% endif %}
+    </section>
+</section>
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    {{form.module.label}}
+    {{form.module()}}
+    {{form.submit()}}
+</form>
+<table id="announcements">
+    <tr>
+        <th width="130px">Date:</th>
+        <th>For Module:</th>
+        <th>Announcement:</th>
+    </tr>
+        {% for announcement in announcements %}
+            <tr>
+                <td width="130px">{{announcement["date"]}}</td>
+                <td>{{announcement["module"]}}</td>
+                <td>{{announcement["message"]}}</td>
+            </tr>
+        {% endfor %}
+</table>
+{% endblock %}

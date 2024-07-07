@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main_content %}
+<h1>Assignments for {{module}}</h1>
+<section class="center">
+<table>
+        <tr>
+            <th>Name</th>
+            <th>Due Date</th>
+            <th>Download</th>
+            <th>Upload</th>
+        </tr>
+    {% for assignment in assignments %}
+        <tr>
+            <td>{{assignment["name"]}}</td> 
+            <td>{{assignment["due_date"]}}</td>
+            <td><a href="{{url_for('download', name=assignment['file_path'])}}">Download</a></td>
+            <td><a href="{{url_for('upload_file', id=assignment['id'])}}" target="_blank">Upload</a></td>
+        </tr>
+    {% endfor %}
+</table>
+{{message}}
+</section>
+{% endblock %}
+

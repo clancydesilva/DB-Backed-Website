@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block main_content %}
+<section class="form">
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+<table>
+    <tr>
+        <td>{{form.module.label}}</td>
+        <td>{{form.module()}}</td>
+    </tr>
+    <tr>
+        <td>{{form.message.label}}</td>
+        <td>{{form.message()}}</td>
+    </tr>
+    <tr>
+        <td>{{form.submit}}</td>
+    </tr>
+</table>
+<p>{{message}}</p>
+</form>
+</section>
+{% endblock %}

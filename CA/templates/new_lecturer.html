@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% block main_content %}
+<section class="form">
+<form action="" method="post" novalidate> 
+    {{form.hidden_tag()}} 
+    <table>
+        <tr>
+            <td>{{form.id.label}} </td>
+            <td>{{form.id()}}
+                {% for error in form.id.errors %} 
+                    {{error}} 
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>{{form.first_name.label}}</td>
+            <td>
+                {{form.first_name()}} 
+                {% for error in form.first_name.errors %} 
+                    {{error}} 
+                {% endfor %} 
+            </td>
+        </tr>
+        <tr>
+            <td>{{form.last_name.label}}</td>
+            <td>{{form.last_name()}}</td>
+        </tr>
+        <tr>
+            <td>{{form.modules.label}}</td>
+            <td>{{form.modules()}}</td>
+        </tr>
+        <tr>
+            <td>{{form.submit()}}</td>
+        </tr>
+    </table>
+{{message}}
+</form> 
+</section>
+{% endblock %}

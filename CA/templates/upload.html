@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main_content %}
+<form action="" method="post" enctype="multipart/form-data" novalidate>
+    {{form.hidden_tag()}}
+    {{form.file()}}
+    {{form.submit}}
+    {{message}}
+</form>
+<p>{{error}}</p>
+{% endblock %}

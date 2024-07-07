@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main_content %}
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    {{form.new_grade.label}}
+    {{form.new_grade()}}
+    {{form.submit}}
+    {{message}}
+</form>
+{% endblock %}

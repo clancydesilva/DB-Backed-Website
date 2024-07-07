@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block main_content %}
+<section class="form">
+<form action="" method="post" novalidate> 
+    {{form1.hidden_tag()}} 
+    {{form2.hidden_tag()}} 
+    <table>
+        <tr>
+            <td>{{form1.account.label}}</td>
+            <td>{{form1.account()}}</td>
+        </tr>
+        <tr>
+            <td>{{form1.submit()}}</td>
+        </tr>
+        {% if g.second_form %}
+        <tr>
+            <td>{{form2.id.label}}</td>
+            <td>{{form2.id()}}</td>
+        </tr>
+        <tr>
+            <td>{{form2.submit()}}</td>
+        </tr>
+        {% endif %}
+    </table>
+</form> 
+</section>
+{% endblock %}

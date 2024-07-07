@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block main_content %}
+<section class="center">
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    {{form.id.label}}
+    {{form.id()}}
+
+    {{form.name.label}}
+    {{form.name()}}
+    <br>
+    {{form.module.label}}
+    {{form.module()}}
+
+    {{form.grade.label}}
+    {{form.grade()}}
+
+    {{form.semester.label}}
+    {{form.semester()}}
+
+    {{form.type.label}}
+    {{form.type()}}
+    {{form.submit()}}
+</form>
+{% if students %}
+    <table>
+        <caption>{{caption}}</caption>
+            <tr>
+                <th>Student ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Year</th>
+                <th>Semester</th>
+                <th>Type</th>
+                <th>Grade</th>
+                <th>Update</th>
+            </tr>
+        {% for student in students %}
+            <tr>
+                <td>{{student["id"]}}</td> 
+                <td>{{student["first_name"]}}</td>
+                <td>{{student["last_name"]}}</td>
+                <td>{{student["year"]}}</td>
+                <td>{{student["semester"]}}</td>
+                <td>{{student["type"]}}</td>
+                <td>{{student["grade"]}}</td>
+                <td><a href="{{url_for('update_grades', id=student['id'], semester=student['semester'], type=student['type'])}}"><button>Update Grade</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+</section>
+{% endblock %}

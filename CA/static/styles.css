@@ -1,0 +1,146 @@
+:root {
+    font-size: 16px;
+}
+
+html {
+    background: #F0FDF4;
+    font-family: 'Bahnschrift';
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+nav p a{
+    font-size:2rem;
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+    background: #8DBDEC;
+    color: #020B04;
+    font-size: 30px;
+    border-radius: 8px;
+    position: fixed;
+    width: 97.6%;
+}
+
+nav, main {
+    padding-top: 140px;
+}
+
+#admin_nav {
+    padding-top: 90px;
+}
+
+nav {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+nav a:link, nav a:visited {
+    color: rgb(0, 0, 0);
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+  
+nav a:hover, nav a:active {
+    background-color: #8dbcec92;
+}
+
+main {
+    margin-bottom: 70px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #F0FDF4;
+}
+
+footer > p {
+    display: inline;
+}
+
+#copy {
+    margin-left: 15px;
+    float:left;
+}
+
+#logout {
+    margin-right: 15px;
+    float: right;
+}
+
+caption {
+    text-align: center;
+}
+
+.form, .form table, .form th, .form tr, .form td{
+    border: none;
+    padding: 5px;
+    margin: 20px auto;
+}
+
+table, th, tr, td{
+    border: black solid 2px;
+    border-collapse: collapse;
+    padding: 8px;
+    margin: 20px auto;
+}
+
+#right p {
+    text-align: center;
+}
+
+#dashboard {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-areas: "left right";
+}
+
+#left {
+    grid-area: left;
+    border-right: #020B04 solid 2px;
+
+}
+
+#right {
+    grid-area: right;
+    margin-left: 12px;
+}
+
+#due, #modules {
+    width: 98.3%; 
+}
+
+#left, #right {
+    padding: 10px;
+}
+
+#announcements {
+    margin: 10px;
+    width: 98.3%;
+}
+
+#modules tr td:first-child{
+    font-size: 2rem;
+    text-align: center;
+}
+
+#overdue {
+    color: rgb(158, 0, 0);
+    font-weight: bold;
+}

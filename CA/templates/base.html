@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8 name="viewport" content="initial-scale=1.0, width=device-width"/>
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" />
+</head>
+
+<body>
+    <header>
+        <h1>Kanvas</h1>
+    </header>
+    <main>    
+        {% block main_content %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p id="copy">&copy; Clancy DeSilva 2024</p>
+        {% if g.user %}
+            <p id="logout"><a href="{{url_for('logout')}}"><button>Logout</button></a></p>
+        {% endif %}
+    </footer>
+</body>
+
+</html>

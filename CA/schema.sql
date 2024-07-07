@@ -1,0 +1,112 @@
+-- DROP TABLE IF EXISTS students;
+-- CREATE TABLE students
+-- (
+--     id CHAR (4),
+--     first_name VARCHAR (20),
+--     last_name VARCHAR (30),
+--     course CHAR (5),  
+--     year CHAR (1)
+-- );
+
+-- DROP TABLE IF EXISTS announcements;
+-- CREATE TABLE announcements
+-- (
+--     id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     module CHAR (5),
+--     message TEXT,
+--     date DATE
+
+-- );
+
+-- DROP TABLE IF EXISTS assignments_due;
+-- CREATE TABLE assignments_due
+-- (   
+--     module_id CHAR (5),
+--     name TEXT,
+--     id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     due_date DATE,
+--     file_path TEXT
+-- );
+
+-- DROP TABLE IF EXISTS assignments_submitted;
+-- CREATE TABLE assignments_submitted
+-- (   
+--     std_id CHAR (4),
+--     id INTEGER,
+--     file_path TEXT
+-- );
+
+-- DROP TABLE IF EXISTS grades;
+-- CREATE TABLE grades
+-- (
+--     std_id CHAR (4),
+--     module CHAR (2),
+--     semester CHAR (1),
+--     type TEXT,
+--     grade CHAR (1)
+-- );
+
+-- --'U' for ungraded
+-- INSERT INTO grades
+-- VALUES  
+-- ('ST01','CC001','1','Mid-term','B'),
+-- ('ST01','CC001','1','Finals','D'),
+-- ('ST01','CC001','1','Quiz','D'),
+-- ('ST01','CC001','2','Mid-term','U'),
+-- ('ST01','CC001','2','Finals','U'),
+-- ('ST01','CC001','2','Quiz','U'),
+-- ('ST02','CC001','1','Mid-term','E'),
+-- ('ST02','CC001','1','Finals','F'),
+-- ('ST02','CC001','1','Quiz','E'),
+-- ('ST02','CC001','2','Mid-term','U'),
+-- ('ST02','CC001','2','Finals','U'),
+-- ('ST02','CC001','2','Quiz','U'),
+-- ('ST03','CC001','1','Mid-term','A'),
+-- ('ST03','CC001','1','Finals','A'),
+-- ('ST03','CC001','1','Quiz','A'),
+-- ('ST03','CC001','2','Mid-term','U'),
+-- ('ST03','CC001','2','Finals','U'),
+-- ('ST03','CC001','2','Quiz','U'),
+-- ('ST04','CC001','1','Mid-term','C'),
+-- ('ST04','CC001','1','Finals','B'),
+-- ('ST04','CC001','1','Quiz','A'),
+-- ('ST04','CC001','2','Mid-term','U'),
+-- ('ST04','CC001','2','Finals','U'),
+-- ('ST04','CC001','2','Quiz','U'),
+-- ('ST05','CC001','1','Mid-term','B'),
+-- ('ST05','CC001','1','Finals','B'),
+-- ('ST05','CC001','1','Quiz','E'),
+-- ('ST05','CC001','2','Mid-term','U'),
+-- ('ST05','CC001','2','Finals','U'),
+-- ('ST05','CC001','2','Quiz','U');
+
+
+-- DROP TABLE IF EXISTS enrollment;
+-- CREATE TABLE enrollment
+-- (
+--     std_id CHAR (4),
+--     modules CHAR (6)
+-- );
+
+-- DROP TABLE IF EXISTS lecturers;
+-- CREATE TABLE lecturers
+-- (
+--     id CHAR (3),
+--     first_name VARCHAR (20),
+--     last_name VARCHAR (30)
+-- );
+
+-- DROP TABLE IF EXISTS teaches;
+-- CREATE TABLE teaches
+-- (
+--     lec_id CHAR (3),
+--     module CHAR (6)
+-- );
+
+-- DROP TABLE IF EXISTS users;
+-- CREATE TABLE users
+-- (
+--     id CHAR (3),
+--     password VARCHAR,
+--     type CHAR (5)
+-- );

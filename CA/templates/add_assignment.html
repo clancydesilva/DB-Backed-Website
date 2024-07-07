@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block main_content %}
+<section class="form">
+<form action="" method="post" enctype="multipart/form-data" novalidate>
+    {{form.hidden_tag()}}
+    <table>
+        <tr>
+            <td>{{form.module.label}}</td>
+            <td>{{form.module()}}</td>
+        </tr>
+        <tr>
+            <td>{{form.name.label}}</td>
+            <td>{{form.name()}}</td>
+        </tr>
+        <tr>
+            <td>{{form.date.label}}</td>
+            <td>{{form.date()}}</td>
+        </tr>
+        <tr>
+            <td>{{form.file.label}}</td>
+            <td>{{form.file()}}</td>
+        </tr>
+        <tr>
+            <td>{{form.submit}}</td>
+        </tr>
+    </table>
+</form>
+<p>{{message}}</p>
+<p>{{error}}</p>
+</section>
+{% endblock %}

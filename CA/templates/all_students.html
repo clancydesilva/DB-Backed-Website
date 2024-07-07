@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block main_content %}
+<table>
+<caption>{{caption}}</caption>
+    <tr>
+        <th>Student ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Course</th>
+        <th>Year</th>
+    </tr>
+{% for student in students %}
+    <tr>
+        <td>{{student["id"]}}</td> 
+        <td>{{student["first_name"]}}</td>
+        <td>{{student["last_name"]}}</td>
+        <td>{{student["course"]}}</td>
+        <td>{{student["year"]}}</td>
+    </tr>
+{% endfor %}
+    <tr>
+        <td colspan="5"><a href="{{url_for('new_student')}}"><button>Add a New Student</button></a></td>
+    </tr>
+</table>
+{% endblock %}

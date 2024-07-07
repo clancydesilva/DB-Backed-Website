@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block main_content %}
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    <table class="form">
+        <tr>
+            <td>
+                {{form.id.label}}
+            </td>
+            <td>
+                {{form.id()}}
+                {% for error in form.id.errors %}
+                    {{error}}
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{form.password.label}}
+            </td>
+            <td>
+                {{form.password()}}
+                {% for error in form.password.errors %}
+                    {{error}}
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>{{form.submit()}}</td>
+        </tr>
+        
+    </table>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main_content %}
+<h1>Grades for {{module}}</h1>
+<section class="center">
+<table>
+        <tr>
+            <th>Type</th>
+            <th>Semester</th>
+            <th>Grade</th>
+        </tr>
+    {% for grade in grades %}
+        <tr>
+            <td>{{grade["type"]}}</td> 
+            <td>{{grade["semester"]}}</td>
+            <td>{{grade["grade"]}}</td>
+
+        </tr>
+    {% endfor %}
+    </table>
+</section>
+{% endblock %}
