@@ -1,14 +1,14 @@
 Name: Kanvas
 - A DB-backed website using Python with Flask framework, Jinja, HTML and minimal CSS.
 - Inspired by an already existing website, Canvas
-- Used my institutions to keep track of students and lecturers/teachers
+- Used by institutions to keep track of students and lecturers/teachers
 
 Running the Website:
 - Download all the files
 - Find and open the index.html
 - Run it on a server (i.e VSCode with Live Server)
 - You can use the sample accounts for lecturers and students to use it
-- Or can use the admin account to create your own accounts (admins log into the lecturer accounts)
+- Or can use the admin account to create your accounts (admins log into the lecturer accounts)
 
 Features:
 - Lecturers:
